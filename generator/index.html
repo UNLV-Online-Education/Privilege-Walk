@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <script src="../main/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet/less" type="text/css" href="main.less" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js"></script>
+  <script type="text/javascript" src="../assets/validator.js-master/validator.min.js"></script>
+  <script type="text/javascript" src="../assets/DOMPurify-master/dist/purify.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <header class="pw-container-header">
+    <span class="left-corner"></span>
+    <span class="right-corner"></span>
+    <h2 class="pw-container-title" id="PW-title">Privilege Walk</h2>
+    <span class="fa fa-info-circle invisible" id="info" title="instructions"></span>
+    <div class="dropdown">
+      <span class="fas fa-ellipsis-v fa-2x invisible" id="kebab"></span>
+      <div class="dropdown-content">
+        <div id="import" title="import Privilege Walk statements">Import default Statements</div>
+        <div id="import-prev" title="import previous">Import Statements by key</div>
+        <div id="delete-all" title="delete all the statements">Delete all Statements</div>
+      </div>
+    </div>
+    <div id="undo" class="invisible fade-top">
+      <button id="undo-btn">Click here to undo</button>
+    </div>
+    <div id="delete-veri" class="invisible fade-top">
+      <p>Are you sure you want to delete all the statements?</p>
+      <button id="delete-yes">Yes</button>
+      <button id="delete-cancel">Cancel</button>
+    </div>
+    <div id="import-prev-veri" class="invisible fade-top">
+      <p id="enter-key">Enter Key:</p>
+      <textarea id="textarea-key" placeholder="Enter key here..."></textarea>
+      <button id="import-prev-confirm">Confirm</button>
+      <button id="import-prev-cancel">Cancel</button>
+      <p id="warning">Note: This process will delete all your current statements on this page</p>
+    </div>
+    <button id="print-btn" class="fa fa-print invisible" onclick="window.print();"></button>
+    <div class="modal-overlay invisible"> </div>
+  </header>
+  <nav>
+    <div class="row no-print">
+      <a id="list1" class="col-sm">1. Course Info</a>
+      <a id="list2" class="col-sm">2. Statements</a>
+      <a id="list3" class="col-sm">3. Review</a>
+      <a id="list4" class="col-sm">4. Complete</a>
+    </div>
+  </nav>
+  <section id="part1" class="pw-container fade-in">
+    <section class="content">
+      <div class="form-variables">
+        <form id="statement-form" name="sform" action="mailform.php" method="post">
+          <span id="institution-veri">
+            <input type="text" name="institution" placeholder="Institution e.g. UNLV" id="institution" maxlength="100"
+              oninput="this.value = this.value.toUpperCase()" />
+          </span>
+          <span id="course-prefix-number-veri">
+            <input type="text" name="coursePrefix" placeholder="Prefix e.g. WMST" id="coursePrefix" maxlength="10"
+              oninput="this.value = this.value.toUpperCase()" />
+          </span>
+          <span id="course-number-veri">
+            <input type="text" name="courseNumber" placeholder="Number e.g. 113" id="courseNumber" maxlength="10" />
+          </span>
+          <span id="course-section-number-veri">
+            <input type="text" name="courseSection" placeholder="Section e.g. 1001" id="courseSection" maxlength="10" />
+          </span>
+          <div id="wrap-semester">
+            <span id="year-veri">
+              <input type="number" name="year" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                placeholder="Year" id="year" maxlength="4">
+            </span>
+            <span id="semesterChoicesVeri">
+              <select id="semesterChoices" class="minimal ">
+                <option value="" selected disabled>Semester</option>
+                <option value="Fall">Fall</option>
+                <option value="Spring">Spring</option>
+                <option value="Summer">Summer</option>
+              </select>
+            </span>
+          </div>
+          <span class="hide" id="form-validator">No special characters allowed</span>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div class="btn-container">
+        <button id="reset" class="left" value="Reset form" onclick="resetFormfieldsAndClearLocalStorage()">Reset</button>
+        <button id="form-next" class="right">Next</button>
+      </div>
+    </footer>
+  </section>
+  <section id="part2" class="pw-container invisible ">
+    <div id="buffer"></div>
+    <section class="content">
+      <div id="pw-container-statements">
+        <ol id="sList"></ol>
+      </div>
+      <div id="instruction-modal" class="modal">
+        <div class="scroll-wrap">
+          <div class="modal-content">
+            <section class="modal-section">
+              <header>
+                <span class="fa fa-info-circle" id="info2"></span>
+                <h2 class="pw-container-title">Instructions</h2>
+                <span id="iModal-close" aria-label="close instructions modal box">&times;</span>
+              </header>
+              <section class="modal-interior-content">
+                <p id="choose-default">A page with all the default statements have been set up for you. Simply press
+                  next if you don't intend to
+                  make any changes.</p>
+                <dl>
+                  <dt>Here are a few pointers to help you navigate this page:</dt>
+                  </dd>
+                  <ul>
+                    <li>If the statement has a negative correlation to ssuccess, choose the left-arrow, which indicates
+                      a
+                      step backward.</li>
+                    <li>If the statement has a positive correlation to success, choose the right-arrow, which indicates
+                      a
+                      step
+                      forward.
+                    </li>
+                  </ul>
+                  </dd>
+                  <dt> Click on the <span class="fas fa-ellipsis-v"></span> icon to: </dt>
+                  <dd>
+                    <ul>
+                      <li> Import default statements</li>
+                      <li> Import from previously created Privilege Walks by using a key </li>
+                      <li> Delete all statements</li>
+                    </ul>
+                  </dd>
+                </dl>
+                <button id="get-started-btn">Let's get started </button>
+              </section>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div id="import-modal" class="modal">
+        <div class="scroll-wrap">
+          <div class="modal-content">
+            <section class="modal-section">
+              <header>
+                <span id="import-close" aria-label="Close Import List Modal Box">&times;</span>
+                <h2 class="pw-container-title">Privilege Walk Statements</h2>
+              </header>
+              <section class="modal-interior-content">
+                <ol class="import-modal-list form-inline" id="import-statements">
+                  <li id="checkAllLi">
+                    <input type="checkbox" id="checkAll"> Select all Statements</li>
+                  <hr>
+                </ol>
+              </section>
+              <footer id="footer-import">
+                <button id="import-btn">Import selected statements</button>
+              </footer>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="btn-container">
+        <button id="back" class="button left">Back</button>
+        <button class="button center" id="add-Statement" title="Add statement">
+          Add Statement
+        </button>
+        <button id="next" class="button right">Next</button>
+      </div>
+    </footer>
+    <div id="max-statements" class="invisible fade-top"> Cannot exceed more than 50 statements </div>
+  </section>
+  <section id="part3" class="pw-container statement-review invisible fade-in">
+    <section class="content">
+      <div id="course-review" style="display: none;">
+        <br>
+        <div id="review-course-name">
+          <h5>
+            Please take a moment to review and verify that the following information is correct.
+          </h5>
+          <p class="para-instructions">
+            <div>
+              <span class="course-info">Institution: </span>
+              <label id="institution-review">+institution+</label>
+            </div>
+            <div>
+              <span class="course-info">Course Name: </span>
+              <label id="coursePrefix-review">+coursePrefix+</label>
+            </div>
+            <div>
+              <span class="course-info">Course Number: </span>
+              <label id="courseNumber-review">+courseNumber+</label>
+            </div>
+            <div>
+              <span class="course-info">Course Section: </span>
+              <label id="courseSection-review">+courseSection+</label>
+            </div>
+            <div>
+              <span class="course-info">Semester: </span>
+              <label id="season-review">+season+</label>
+            </div>
+            <div>
+              <span class="course-info">Year: </span>
+              <label id="year-review">+year+</label>
+            </div>
+          </p>
+        </div>
+        <ol id="review-OL"></ol>
+      </div>
+    </section>
+    <footer>
+      <div class="btn-container">
+        <button id="review-back" class="button left">Back</button>
+        <button id="review-next" class="button right">Finish</button>
+      </div>
+    </footer>
+  </section>
+  <section id="part4" class="pw-container statement-generator invisible fade-in">
+    <section class="content">
+      <div id="statement-url">
+        <div id="complete-instructions">
+          <p class="para-instructions  no-print">Your personal Privilege Walk activity has been created for you. Below
+            is a link to each part of the activity.</p>
+          <p class="para-instructions  no-print">The first link copies the address to the Questionnaire page which is
+            used to gather the responses from your audience and the second link is used to
+            playback all the responses from your audience.</p>
+        </div>
+        <p class="show-print" id="print-header">Privilege Walk</p>
+        <br>
+        <div id="complete-buttons">
+          <label id="copy-statement" class="no-print"></label>
+          <button class="popup no-print far fa-clipboard fa-3x" onclick="copyToClipboard('#copy-statement')">
+            <span class="popuptext" id="myPopup"> Questionnaire page copied!</span>
+          </button>
+          <p class="show-print">Link to Questionnaire page: </p>
+          <div id="print-questionnaire" class="show-print"></div>
+          <br class="show-print">
+          <p class="show-print">Link to Questionnaire response page: </p>
+          <div id="print-questionnaire-response" class="show-print"></div>
+          <br>
+          <br class="no-print">
+          <label id="copy-playback" class="no-print"> </label>
+          <button class="popup no-print far fa-clipboard fa-3x" onclick="copyToClipboard2('#copy-playback')">
+            <span class="popuptext no-print" id="myPopup2">Response page copied!</span>
+          </button>
+        </div>
+        <br>
+        <div id="center-key">
+          <div id="complete-key">
+            <p>Here's your key:</p>
+            <span class="key"></span>
+            <br>
+            <br>
+            <p>
+              <span id="complete-note">Note:</span> This key can be used in future Privilege Walks to import statements
+              made in this activity</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <script src="main.js"></script>
+</body>
+
+</html>

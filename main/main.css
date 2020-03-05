@@ -1,0 +1,55 @@
+html,
+body {
+    font-family: arial, sans;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #d9d9d9;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #222;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:disabled {
+    cursor: not-allowed !important;
+    opacity: .2 !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.center{
+    text-align: center;
+}
+
+#loadingImages{
+    display: none;
+}
+
+/* FOR ACCESSIBLILTY: focus when tabbing but not when clicked. See main.js as well */
+
+body.user-is-tabbing *:focus {
+    outline: 2px solid #7AACFE !important;
+    outline: 5px auto -webkit-focus-ring-color !important;
+}

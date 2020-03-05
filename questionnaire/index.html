@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privilege Walk</title>
+
+  <script src="../main/jquery.js"></script>
+  <script src="../jcanvas.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+  <link rel="stylesheet" href="../main/animate.css">
+  <link rel="stylesheet" href="../main/main.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="choices.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="../main/main.js"></script>
+</head>
+
+<body>
+  <div id="loadingImages">
+    <img id="accessory1" src="../assets/accessories/accessory1.png" alt="black glasses">
+    <img id="accessory2" src="../assets/accessories/accessory2.png" alt="white glasses">
+    <img id="accessory3" src="../assets/accessories/accessory3.png" alt="sunglasses">
+    <img id="accessory4" src="../assets/accessories/accessory4.png" alt="eyelashes">
+    <img id="accessory5" src="../assets/accessories/accessory5.png" alt="wrinkles">
+    <img id="accessory6" src="../assets/accessories/accessory6.png" alt="thin beard">
+    <img id="accessory7" src="../assets/accessories/accessory7.png" alt="thick beard">
+    <img id="accessory8" src="../assets/accessories/accessory8.png" alt="earrings">
+    <img id="accessory9" src="../assets/accessories/accessory9.png" alt="hat">
+    <img id="shirt0" src="../assets/shirt/shirt0.png" alt="black shirt">
+    <img id="shirt1" src="../assets/shirt/shirt1.png" alt="blue shirt">
+    <img id="shirt2" src="../assets/shirt/shirt2.png" alt="pink shirt">
+    <img id="shirt3" src="../assets/shirt/shirt3.png" alt="red shirt">
+    <img id="shirt4" src="../assets/shirt/shirt4.png" alt="grey shirt">
+    <img id="shirt5" src="../assets/shirt/shirt5.png" alt="yellow shirt">
+    <img id="c0hair1" src="../assets/hair/color0/hair1.png" alt="brown crew cut hair style">
+    <img id="c0hair2" src="../assets/hair/color0/hair2.png" alt="brown side ponytail hair style">
+    <img id="c0hair3" src="../assets/hair/color0/hair3.png" alt="brown bowl cut hair style">
+    <img id="c0hair4" src="../assets/hair/color0/hair4.png" alt="brown buzz cut hair style">
+    <img id="c0hair5" src="../assets/hair/color0/hair5.png" alt="short brown curly top hair style">
+    <img id="c0hair6" src="../assets/hair/color0/hair6.png" alt="long brown curly hair style">
+    <img id="c0hair7" src="../assets/hair/color0/hair7.png" alt="brown hair style with bun">
+    <img id="c0hair8" src="../assets/hair/color0/hair8.png" alt="brown side swoop hair style">
+    <img id="c0hair9" src="../assets/hair/color0/hair9.png" alt="short brown curly hair style">
+    <img id="c1hair1" src="../assets/hair/color1/hair1.png" alt="black crew cut hair style">
+    <img id="c1hair2" src="../assets/hair/color1/hair2.png" alt="black side ponytail hair style">
+    <img id="c1hair3" src="../assets/hair/color1/hair3.png" alt="black bowl cut hair style">
+    <img id="c1hair4" src="../assets/hair/color1/hair4.png" alt="black buzz cut hair style">
+    <img id="c1hair5" src="../assets/hair/color1/hair5.png" alt="short black curly top hair style">
+    <img id="c1hair6" src="../assets/hair/color1/hair6.png" alt="long black curly hair style">
+    <img id="c1hair7" src="../assets/hair/color1/hair7.png" alt="black hair style with bun">
+    <img id="c1hair8" src="../assets/hair/color1/hair8.png" alt="black side swoop hair style">
+    <img id="c1hair9" src="../assets/hair/color1/hair9.png" alt="short black curly hair style">
+    <img id="c2hair1" src="../assets/hair/color2/hair1.png" alt="blonde crew cut hair style">
+    <img id="c2hair2" src="../assets/hair/color2/hair2.png" alt="blonde side ponytail hair style">
+    <img id="c2hair3" src="../assets/hair/color2/hair3.png" alt="blonde bowl cut hair style">
+    <img id="c2hair4" src="../assets/hair/color2/hair4.png" alt="blonde buzz cut hair style">
+    <img id="c2hair5" src="../assets/hair/color2/hair5.png" alt="short blonde curly top hair style">
+    <img id="c2hair6" src="../assets/hair/color2/hair6.png" alt="long blonde curly hair style">
+    <img id="c2hair7" src="../assets/hair/color2/hair7.png" alt="blonde hair style with bun">
+    <img id="c2hair8" src="../assets/hair/color2/hair8.png" alt="blonde side swoop hair style">
+    <img id="c2hair9" src="../assets/hair/color2/hair9.png" alt="short blonde curly hair style">
+    <img id="c3hair1" src="../assets/hair/color3/hair1.png" alt="dark brown crew cut hair style">
+    <img id="c3hair2" src="../assets/hair/color3/hair2.png" alt="dark brown side ponytail hair style">
+    <img id="c3hair3" src="../assets/hair/color3/hair3.png" alt="dark brown bowl cut hair style">
+    <img id="c3hair4" src="../assets/hair/color3/hair4.png" alt="dark brown buzz cut hair style">
+    <img id="c3hair5" src="../assets/hair/color3/hair5.png" alt="short dark brown curly top hair style">
+    <img id="c3hair6" src="../assets/hair/color3/hair6.png" alt="long dark brown curly hair style">
+    <img id="c3hair7" src="../assets/hair/color3/hair7.png" alt="dark brown hair style with bun">
+    <img id="c3hair8" src="../assets/hair/color3/hair8.png" alt="dark brown side swoop hair style">
+    <img id="c3hair9" src="../assets/hair/color3/hair9.png" alt="short dark brown curly hair style">
+    <img id="c4hair1" src="../assets/hair/color4/hair1.png" alt="grey crew cut hair style">
+    <img id="c4hair2" src="../assets/hair/color4/hair2.png" alt="grey side ponytail hair style">
+    <img id="c4hair3" src="../assets/hair/color4/hair3.png" alt="grey bowl cut hair style">
+    <img id="c4hair4" src="../assets/hair/color4/hair4.png" alt="grey buzz cut hair style">
+    <img id="c4hair5" src="../assets/hair/color4/hair5.png" alt="short grey curly top hair style">
+    <img id="c4hair6" src="../assets/hair/color4/hair6.png" alt="long grey curly hair style">
+    <img id="c4hair7" src="../assets/hair/color4/hair7.png" alt="grey hair style with bun">
+    <img id="c4hair8" src="../assets/hair/color4/hair8.png" alt="grey side swoop hair style">
+    <img id="c4hair9" src="../assets/hair/color4/hair9.png" alt="short grey curly hair style">
+    <img id="c5hair1" src="../assets/hair/color5/hair1.png" alt="light brown crew cut hair style">
+    <img id="c5hair2" src="../assets/hair/color5/hair2.png" alt="light brown side ponytail hair style">
+    <img id="c5hair3" src="../assets/hair/color5/hair3.png" alt="light brown bowl cut hair style">
+    <img id="c5hair4" src="../assets/hair/color5/hair4.png" alt="light brown buzz cut hair style">
+    <img id="c5hair5" src="../assets/hair/color5/hair5.png" alt="short light brown curly top hair style">
+    <img id="c5hair6" src="../assets/hair/color5/hair6.png" alt="long light brown curly hair style">
+    <img id="c5hair7" src="../assets/hair/color5/hair7.png" alt="light brown hair style with bun">
+    <img id="c5hair8" src="../assets/hair/color5/hair8.png" alt="light brown side swoop hair style">
+    <img id="c5hair9" src="../assets/hair/color5/hair9.png" alt="short light brown curly hair style">
+    <img id="c6hair1" src="../assets/hair/color6/hair1.png" alt="orange crew cut hair style">
+    <img id="c6hair2" src="../assets/hair/color6/hair2.png" alt="orange side ponytail hair style">
+    <img id="c6hair3" src="../assets/hair/color6/hair3.png" alt="orange bowl cut hair style">
+    <img id="c6hair4" src="../assets/hair/color6/hair4.png" alt="orange buzz cut hair style">
+    <img id="c6hair5" src="../assets/hair/color6/hair5.png" alt="short orange curly top hair style">
+    <img id="c6hair6" src="../assets/hair/color6/hair6.png" alt="long orange curly hair style">
+    <img id="c6hair7" src="../assets/hair/color6/hair7.png" alt="orange hair style with bun">
+    <img id="c6hair8" src="../assets/hair/color6/hair8.png" alt="orange side swoop hair style">
+    <img id="c6hair9" src="../assets/hair/color6/hair9.png" alt="short orange curly hair style">
+    <img id="c0face0" src="../assets/head/color0/head0.png" alt="beige very round human face">
+    <img id="c0face1" src="../assets/head/color0/head1.png" alt="beige round human face">
+    <img id="c0face2" src="../assets/head/color0/head2.png" alt="beige thin human face">
+    <img id="c1face0" src="../assets/head/color1/head0.png" alt="pale very round human face">
+    <img id="c1face1" src="../assets/head/color1/head1.png" alt="pale round human face">
+    <img id="c1face2" src="../assets/head/color1/head2.png" alt="pale thin human face">
+    <img id="c2face0" src="../assets/head/color2/head0.png" alt="tan very round human face">
+    <img id="c2face1" src="../assets/head/color2/head1.png" alt="tan round human face">
+    <img id="c2face2" src="../assets/head/color2/head2.png" alt="tan thin human face">
+    <img id="c3face0" src="../assets/head/color3/head0.png" alt="dark beige very round human face">
+    <img id="c3face1" src="../assets/head/color3/head1.png" alt="dark beige round human face">
+    <img id="c3face2" src="../assets/head/color3/head2.png" alt="dark beige thin human face">
+    <img id="c4face0" src="../assets/head/color4/head0.png" alt="light brown very round human face">
+    <img id="c4face1" src="../assets/head/color4/head1.png" alt="light brown round human face">
+    <img id="c4face2" src="../assets/head/color4/head2.png" alt="light brown thin human face">
+    <img id="c5face0" src="../assets/head/color5/head0.png" alt="brown very round human face">
+    <img id="c5face1" src="../assets/head/color5/head1.png" alt="brown round human face">
+    <img id="c5face2" src="../assets/head/color5/head2.png" alt="brown thin human face">
+    <img id="c6face0" src="../assets/head/color6/head0.png" alt="dark brown very round human face">
+    <img id="c6face1" src="../assets/head/color6/head1.png" alt="dark brown round human face">
+    <img id="c6face2" src="../assets/head/color6/head2.png" alt="dark brown thin human face">
+    <img id="c7face3" src="../assets/head/color7/head0.png" alt="grey alien face">
+    <img id="c8face3" src="../assets/head/color7/head1.png" alt="green alien face">
+    <img id="c9face4" src="../assets/head/color8/head0.png" alt="grey robot face">
+  </div>
+
+
+  <!-- Main Template -->
+  <div id="statement-modal--background">
+    <div id="statement-modal">
+      <div class="modal--header">
+        <h1>PRIVILEGE WALK</h1>
+        <button aria-label="open 'help' window" title="open 'help' window" id="helpButton2" class="help blueButton">
+          <strong>?</strong>
+        </button>
+      </div>
+      <div id="statement-modal--container">
+        <div id="currentUser">
+          <div id="currentAvatar"></div>
+          <p id="currentName"></p>
+        </div>
+        <div id="statement">STATEMENTS</div>
+        <div id="moveContainer">
+          <div class="stepContainer">
+            <button aria-label="step backward" id="stepBack" onclick="move(-1)" class="step backward blueButton" data-placement="top"
+              title="backward">
+            </button>
+            <p>Step Back</p>
+          </div>
+          <div class="stepContainer">
+            <button aria-label="stand still" id="standStill" onclick="move(0)" class="step blueButton" data-placement="top" title="stand still">
+            </button>
+            <p>Stand Still</p>
+          </div>
+          <div class="stepContainer">
+            <button aria-label="step forward" id="stepForward" onclick="move(1)" class="step forward blueButton" data-placement="top"
+              title="forward">
+            </button>
+            <p>Step Forward</p>
+          </div>
+        </div>
+        
+      </div>
+      <div id="statement-modal--navigation-container">
+          <button aria-label="go to previous statement" title="go to previous statement" id="back" class="blueButton">BACK</button>
+          <span id="progress"></span>
+          <button aria-label="go to next statement" title="go to next statement" id="next" class="blueButton">NEXT</button>
+        </div>
+    </div>
+  </div>
+
+
+
+  <!-- The Modal -->
+  <div id="input-modal--background">
+    <div id="input-modal">
+      <div id="input-modal--header" class="modal--header">
+        <h1>Privilege Walk</h1>
+        <button aria-label="open 'help' window" title="open 'help' window" id="helpButton" class="help blueButton">
+          <strong>?</strong>
+        </button>
+      </div>
+      <div id="input-modal--container">
+        <div id="creator">
+          <canvas id='canvas' height="250px" width="250px"></canvas>
+          <button aria-label="randomly choose avatar" title="randomly choose avatar" id="random" class="blueButton">SHUFFLE</button>
+          <p class="required" id="avatarErrorMsg">* Choose an avatar</p>
+        </div>
+        <button aria-label="choose face" title="choose face" id="openFaceModal" class="choiceButton">face</button>
+        <button aria-label="choose hair" title="choose hair" id="openHairModal" class="choiceButton">hair</button>
+        <button aria-label="choose shirt" title="choose shirt" id="openShirtModal" class="choiceButton">shirt</button>
+        <button aria-label="choose miscellaneous" title="choose miscellaneous" id="openAccessoryModal" class="choiceButton">misc.</button>
+        <div id="input">
+          <label for="name">Avatar name: </label>
+          <input type="text" id="name" placeholder="Your name..." maxlength="75">
+          <button aria-label="submit avatar" title="submit avatar" id="done" class="blueButton" type="button">DONE</button>
+          <p class="required" id="nameErrorMsg">* Choose a name</p>
+        </div>
+        <label for="submission" style="visibility:hidden;position:absolute;height:0;"></label>
+        <input name=submission type="submit" style="visibility:hidden;position:absolute;height:0;" />
+
+        <!-- face modal -->
+        <div id="faceModal" class="input-modal--mini-modal">
+          <div class="input-modal--mini-modal--container">
+            <div id="faceColors">
+              <div>
+                <label id="skinColorlabel">Choose a skin color</label>
+              </div>
+              <div id="humanColors">
+                <button aria-label="beige face color" title="beige face color" id="faceColorButton0" onclick="attrClicked('fColor',0)" class="choice faceColorButton colorButton"></button>
+                <button aria-label="pale face color" title="pale face color" id="faceColorButton1" onclick="attrClicked('fColor',1)" class="choice faceColorButton colorButton"></button>
+                <button aria-label="tan face color" title="tan face color" id="faceColorButton2" onclick="attrClicked('fColor',2)" class="choice faceColorButton colorButton"></button>
+                <button aria-label="dark beige face color" title="dark beige face color" id="faceColorButton3" onclick="attrClicked('fColor',3)"
+                  class="choice faceColorButton colorButton"></button>
+                <button aria-label="light brown face color" title="light brown face color" id="faceColorButton4" onclick="attrClicked('fColor',4)"
+                  class="choice faceColorButton colorButton"></button>
+                <button aria-label="brown face colorbrown face co" title="brown face color" id="faceColorButton5" onclick="attrClicked('fColor',5)"
+                  class="choice faceColorButton colorButton"></button>
+                <button aria-label="dark brown face color" title="dark brown face color" id="faceColorButton6" onclick="attrClicked('fColor',6)"
+                  class="choice faceColorButton colorButton"></button>
+              </div>
+              <div id="alienColors">
+                <button aria-label="grey alien face color" title="grey alien face color" id="faceColorButton7" onclick="attrClicked('fColor',7)"
+                  class="choice faceColorButton colorButton"></button>
+                <button aria-label="green alien face color" title="green alien face color" id="faceColorButton8" onclick="attrClicked('fColor',8)"
+                  class="choice faceColorButton colorButton"></button>
+              </div>
+            </div>
+            <div id="faces" class="shape">
+              <div>
+                <label>Choose a face shape</label>
+              </div>
+              <button aria-label="very round human face" title="very round human face" id="faceShapeButton0" onclick="attrClicked('fShape',0)"
+                class="choice faceShapeButton shapeButton">
+                <img id="faceShapeButton0Img" src="../assets/head/color0/head0.png" alt="">
+              </button>
+              <button aria-label="round human face" title="round human face" id="faceShapeButton1" onclick="attrClicked('fShape',1)" class="choice faceShapeButton shapeButton">
+                <img id="faceShapeButton1Img" src="../assets/head/color0/head1.png" alt="">
+              </button>
+              <button aria-label="thin human face" title="thin human face" id="faceShapeButton2" onclick="attrClicked('fShape',2)" class="choice faceShapeButton shapeButton">
+                <img id="faceShapeButton2Img" src="../assets/head/color0/head2.png" alt="">
+              </button>
+              <button aria-label="alien face" title="alien face" id="faceShapeButton3" onclick="attrClicked('fShape',3)" class="choice faceShapeButton shapeButton">
+                <img id="faceShapeButton3Img" src="../assets/head/color7/head0.png" alt="">
+              </button>
+              <button aria-label="robot face" title="robot face" id="faceShapeButton4" onclick="attrClicked('fShape',4)" class="choice faceShapeButton shapeButton">
+                <img id="faceShapeButton4Img" src="../assets/head/color8/head0.png" alt="">
+              </button>
+            </div>
+          </div>
+          <button aria-label="close face window" title="close face window" class="closeButton blueButton">CLOSE</button>
+        </div>
+        <!-- hair modal -->
+        <div id="hairModal" class="input-modal--mini-modal">
+
+          <div class="input-modal--mini-modal--container">
+            <div id="hairColors">
+              <div>
+                <label>Choose a hair color</label>
+              </div>
+              <button aria-label="brown hair color" title="brown hair color" id="hairColorButton0" onclick="attrClicked('hColor',0)" class="choice hairColorButton colorButton"></button>
+              <button aria-label="black hair color" title="black hair color" id="hairColorButton1" onclick="attrClicked('hColor',1)" class="choice hairColorButton colorButton"></button>
+              <button aria-label="blonde hair color" title="blonde hair color" id="hairColorButton2" onclick="attrClicked('hColor',2)"
+                class="choice hairColorButton colorButton"></button>
+              <button aria-label="dark brown hair color" title="dark brown hair color" id="hairColorButton3" onclick="attrClicked('hColor',3)"
+                class="choice hairColorButton colorButton"></button>
+              <button aria-label="grey hair color" title="grey hair color" id="hairColorButton4" onclick="attrClicked('hColor',4)" class="choice hairColorButton colorButton"></button>
+              <button aria-label="light brown hair color" title="light brown hair color" id="hairColorButton5" onclick="attrClicked('hColor',5)"
+                class="choice hairColorButton colorButton"></button>
+              <button aria-label="orange hair color" title="orange hair color" id="hairColorButton6" onclick="attrClicked('hColor',6)"
+                class="choice hairColorButton colorButton"></button>
+            </div>
+            <div id="hairs" class="shape">
+              <div>
+                <label>Choose a hairstyle</label>
+              </div>
+              <button aria-label="no hair" title="no hair" id="hairShapeButton0" onclick="attrClicked('hShape',0)" class="choice hairShapeButton shapeButton">
+                <img id="hairShapeButton0Img" src="../assets/none.png" alt="">
+              </button>
+              <button aria-label="crew cut hair style" title="crew cut hair style" id="hairShapeButton1" onclick="attrClicked('hShape',1)"
+                class="choice hairShapeButton shapeButton">
+                <img id="hairShapeButton1Img" src="../assets/hair/color0/hair1.png" alt="">
+              </button>
+              <button aria-label="side ponytail hair style" title="side ponytail hair style" id="hairShapeButton2" onclick="attrClicked('hShape',2)"
+                class="choice hairShapeButton shapeButton">
+                <img id="hairShapeButton2Img" src="../assets/hair/color0/hair2.png" alt="">
+              </button>
+              <button aria-label="bowl cut hair style" title="bowl cut hair style" id="hairShapeButton3" onclick="attrClicked('hShape',3)"
+                class="choice hairShapeButton shapeButton">
+                <img id="hairShapeButton3Img" src="../assets/hair/color0/hair3.png" alt="">
+              </button>
+              <button aria-label="buzz cut hair style" title="buzz cut hair style" id="hairShapeButton4" onclick="attrClicked('hShape',4)"
+                class="choice hairShapeButton shapeButton">
+                <img id="hairShapeButton4Img" src="../assets/hair/color0/hair4.png" alt="">
+              </button>
+              <button aria-label="curly top hair style" title="curly top hair style" id="hairShapeButton5" onclick="attrClicked('hShape',5)"
+                class="choice hairShapeButton shapeButton">
+                <img id="hairShapeButton5Img" src="../assets/hair/color0/hair5.png" alt="">
+              </button>
+              <button aria-label="curly hair style" title="curly hair style" id="hairShapeButton6" onclick="attrClicked('hShape',6)" class="choice hairShapeButton shapeButton">
+                <img id="hairShapeButton6Img" src="../assets/hair/color0/hair6.png" alt="">
+              </button>
+              <button aria-label="hair style with bun" title="hair style with bun" id="hairShapeButton7" onclick="attrClicked('hShape',7)"
+                class="choice hairShapeButton shapeButton">
+                <img id="hairShapeButton7Img" src="../assets/hair/color0/hair7.png" alt="">
+              </button>
+              <button aria-label="side swoop hair style" title="side swoop hair style" id="hairShapeButton8" onclick="attrClicked('hShape',8)"
+                class="choice hairShapeButton shapeButton">
+                <img id="hairShapeButton8Img" src="../assets/hair/color0/hair8.png" alt="">
+              </button>
+              <button aria-label="short curly hair style" title="short curly hair style" id="hairShapeButton9" onclick="attrClicked('hShape',9)"
+                class="choice hairShapeButton shapeButton">
+                <img id="hairShapeButton9Img" src="../assets/hair/color0/hair9.png" alt="">
+              </button>
+            </div>
+          </div>
+          <button aria-label="close hair window" title="close hair window" class="closeButton blueButton">CLOSE</button>
+        </div>
+        <!-- shirt modal -->
+        <div id="shirtModal" class="input-modal--mini-modal">
+          <div class="input-modal--mini-modal--container">
+            <div id="shirts" class="shape">
+              <div>
+                <label>Choose a shirt</label>
+              </div>
+              <button aria-label="black shirt" title="black shirt" id="shirtButton0" onclick="attrClicked('shirt',0)" class="choice shirtButton shapeButton">
+                <img id="shirtButton0Img" src="../assets/shirt/shirt0.png" alt="">
+              </button>
+              <button aria-label="blue shirt" title="blue shirt" id="shirtButton1" onclick="attrClicked('shirt',1)" class="choice shirtButton shapeButton">
+                <img id="shirtButton1Img" src="../assets/shirt/shirt1.png" alt="">
+              </button>
+              <button aria-label="pink shirt" title="pink shirt" id="shirtButton2" onclick="attrClicked('shirt',2)" class="choice shirtButton shapeButton">
+                <img id="shirtButton2Img" src="../assets/shirt/shirt2.png" alt="">
+              </button>
+              <button aria-label="red shirt" title="red shirt" id="shirtButton3" onclick="attrClicked('shirt',3)" class="choice shirtButton shapeButton">
+                <img id="shirtButton3Img" src="../assets/shirt/shirt3.png" alt="">
+              </button>
+              <button aria-label="grey shirt" title="grey shirt" id="shirtButton4" onclick="attrClicked('shirt',4)" class="choice shirtButton shapeButton">
+                <img id="shirtButton4Img" src="../assets/shirt/shirt4.png" alt="">
+              </button>
+              <button aria-label="yellow shirt" title="yellow shirt" id="shirtButton5" onclick="attrClicked('shirt',5)" class="choice shirtButton shapeButton">
+                <img id="shirtButton5Img" src="../assets/shirt/shirt5.png" alt="">
+              </button>
+            </div>
+          </div>
+          <button aria-label="close shirt window" title="close shirt window" class="closeButton blueButton">CLOSE</button>
+        </div>
+        <!-- accessory modal -->
+        <div id="accessoryModal" class="input-modal--mini-modal">
+
+          <div class="input-modal--mini-modal--container">
+            <div id="accessories" class="shape">
+              <div>
+                <label>Choose miscellaneous</label>
+              </div>
+              <button aria-label="no accessory" title="no accessory" id="accessoryButton0" onclick="attrClicked('accessory',0)" class="choice accessoryButton shapeButton">
+                <img id="accessoryButton0Img" src="../assets/none.png" alt="">
+              </button>
+              <button aria-label="thin beard" title="thin beard" id="accessoryButton6" onclick="attrClicked('accessory',6)" class="choice accessoryButton shapeButton">
+                <img id="accessoryButton6Img" src="../assets/accessories/accessory6.png" alt="">
+              </button>
+              <button aria-label="thick beard" title="thick beard" id="accessoryButton7" onclick="attrClicked('accessory',7)" class="choice accessoryButton shapeButton">
+                <img id="accessoryButton7Img" src="../assets/accessories/accessory7.png" alt="">
+              </button>
+              <button aria-label="black stud earrings" title="black stud earrings" id="accessoryButton8" onclick="attrClicked('accessory',8)"
+                class="choice accessoryButton shapeButton">
+                <img id="accessoryButton8Img" src="../assets/accessories/accessory8.png" alt="">
+              </button>
+              <button aria-label="red hat" title="red hat" id="accessoryButton9" onclick="attrClicked('accessory',9)" class="choice accessoryButton shapeButton">
+                <img id="accessoryButton9Img" src="../assets/accessories/accessory9.png" alt="">
+              </button>
+              <button aria-label="black glasses" title="black glasses" id="accessoryButton1" onclick="attrClicked('accessory',1)" class="choice accessoryButton shapeButton">
+                <img id="accessoryButton1Img" src="../assets/accessories/accessory1.png" alt="">
+              </button>
+              <button aria-label="white glasses" title="white glasses" id="accessoryButton2" onclick="attrClicked('accessory',2)" class="choice accessoryButton shapeButton">
+                <img id="accessoryButton2Img" src="../assets/accessories/accessory2.png" alt="">
+              </button>
+              <button aria-label="sunglasses" title="sunglasses" id="accessoryButton3" onclick="attrClicked('accessory',3)" class="choice accessoryButton shapeButton">
+                <img id="accessoryButton3Img" src="../assets/accessories/accessory3.png" alt="">
+              </button>
+              <button aria-label="eyelashes" title="eyelashes" id="accessoryButton4" onclick="attrClicked('accessory',4)" class="choice accessoryButton shapeButton">
+                <img id="accessoryButton4Img" src="../assets/accessories/accessory4.png" alt="">
+              </button>
+              <button aria-label="wrinkles" title="wrinkles" id="accessoryButton5" onclick="attrClicked('accessory',5)" class="choice accessoryButton shapeButton">
+                <img id="accessoryButton5Img" src="../assets/accessories/accessory5.png" alt="">
+              </button>
+            </div>
+          </div>
+          <button aria-label="close miscellaneous window" title="close miscellaneous window" class="closeButton blueButton">CLOSE</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Help Modal -->
+  <div id="help-modal--background">
+    <div id="help-modal">
+      <h2>HELP</h2>
+      <span id="help-modal--icon">?</span>
+
+      <div id="help-modal--container">
+        <h3>Step 1: Create an avatar</h3>
+        <p>Choose an appropriate name for your avatar and design your avatar in any way you like. You will need to
+          <span class='important'>remember your avatar's name</span> for the next part of this activity. Keep in mind,
+          <span class='important'>
+            your avatar's name will be seen by your peers.</p>
+      </div>
+      <div id="help-modal--close-button-container">
+        <button title="close 'help' window" aria-label="close 'help' window" id="gotIt" class="blueButton">GOT IT!</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="done-modal--background">
+    <div id="done-modal">
+      <div id="done-modal--msg-container" class="wrapper--absolute">
+        <p id="done-modal--msg">You have completed this portion of the activity. Please wait for further instructions from your instructors or click
+          on the link below to review your response. You may now close this activity.
+          <span class="important"> Please remember your avatar's name for the next activity.</span>
+        </p>
+        <p id="aLabelAgain">Your avatar's name:</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

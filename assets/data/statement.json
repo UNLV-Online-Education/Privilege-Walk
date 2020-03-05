@@ -1,0 +1,193 @@
+{
+	"statements": [{
+			"statement": "If your ancestors were forced to come to the United States, or their homes were taken from them by the U.S. government, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 1,
+			"dir": -1
+		},
+		{
+			"statement": "If you describe your primary ethnic identity as American, move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 2,
+			"dir": 1
+		},
+		{
+			"statement": "If you were ever called names because of your race, class, ethnicity, gender, sexual orientation or disability, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 3,
+			"dir": -1
+		},
+		{
+			"statement": "Either now or growing up, if there are people who work or worked in your household either as a servant, maid, gardener, nanny, etc., move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 4,
+			"dir": 1
+		},
+		{
+			"statement": "If your parents ever worked as servants, maids, gardeners, nannies, etc., move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 5,
+			"dir": -1
+		},
+		{
+			"statement": "If you are or were (growing up) often embarrassed or ashamed of your clothes, house, car, etc., move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 6,
+			"dir": -1
+		},
+		{
+			"statement": "If you have ever been called names, harassed or targeted by authority figures because of your race, class, ethnicity, age, disability, gender or sexual orientation, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 7,
+			"dir": -1
+		},
+		{
+			"statement": "If there were more than 50 books in your house, move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 8,
+			"dir": 1
+		},
+		{
+			"statement": "If you went to school speaking a language other than English, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 9,
+			"dir": -1
+		},
+		{
+			"statement": "If your parents ever brought you to a museum, art gallery or play, move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 10,
+			"dir": 1
+		},
+		{
+			"statement": "If one of your parents was unemployed or laid off, out of work not by choice, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 11,
+			"dir": -1
+		},
+		{
+			"statement": "If you ever had to skip a meal or were ever hungry because there was not enough money to buy food, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 12,
+			"dir": -1
+		},
+		{
+			"statement": "If your family ever had to move because they could not afford the rent, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 13,
+			"dir": -1
+		},
+		{
+			"statement": "If you ever attended private school or summer camp, move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 14,
+			"dir": 1
+		},
+		{
+			"statement": "If you study the history and culture of your ancestors in school, move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 15,
+			"dir": 1
+		},
+		{
+			"statement": "If you ever tried to change your appearance, accent, mannerisms, or behavior to avoid being ridiculed, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 16,
+			"dir": -1
+		},
+		{
+			"statement": "If you have been told by your parents that you are beautiful/handsome, smart or capable, move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 17,
+			"dir": 1
+		},
+		{
+			"statement": "If you have ever been discouraged from academics or jobs because of your race, class, ethnicity, gender, sexual orientation, or disability, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 18,
+			"dir": -1
+		},
+		{
+			"statement": "If you have lived in a single parent household at any point in your life, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 19,
+			"dir": -1
+		},
+		{
+			"statement": "If a significant part of your childhood was spent living with someone other than your natural parents, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 20,
+			"dir": -1
+		},
+		{
+			"statement": "If you were encouraged by your parents to attend college, move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 21,
+			"dir": 1
+		},
+		{
+			"statement": "If your family had more than one working and reliable vehicle, move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 22,
+			"dir": 1
+		},
+		{
+			"statement": "If your family owned a house, move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 23,
+			"dir": 1
+		},
+		{
+			"statement": "If you ever had to rely primarily on public transportation, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 24,
+			"dir": -1
+		},
+		{
+			"statement": "If you have ever been stopped or questioned by the police because of your race, ethnicity, age, gender, sexual orientation or disability, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 25,
+			"dir": -1
+		},
+		{
+			"statement": "If you were ever paid less or treated unfairly at work because of your race, ethnicity, age, gender, sexual orientation or disability, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 26,
+			"dir": -1
+		},
+		{
+			"statement": "If you have been reared in the Christian religion, move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 27,
+			"dir": 1
+		},
+		{
+			"statement": "If you have ever been unable to navigate through a door, reach a telephone or access other public conveniences, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 28,
+			"dir": -1
+		},
+		{
+			"statement": "If you see people of your race, class, ethnicity, gender, sexual orientation, or ability portrayed on television or in movies in roles you consider degrading, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 29,
+			"dir": -1
+		},
+		{
+			"statement": "If you have ever been afraid or experienced violence because of your race, ethnicity, age, gender, sexual orientation, or disability, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 30,
+			"dir": -1
+		},
+		{
+			"statement": "If your family ever inherited money or property, move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 31,
+			"dir": 1
+		},
+		{
+			"statement": "If you didn’t feel safe walking in your neighborhood, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 32,
+			"dir": -1
+		},
+		{
+			"statement": "If you have ever felt uncomfortable about a joke concerning your race, ethnicity, gender, sexual orientation, or disability, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 33,
+			"dir": -1
+		},
+		{
+			"statement": "If you have ever been the victim of violence related to your race, ethnicity, age, gender, sexual orientation or disability, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 34,
+			"dir": -1
+		},
+		{
+			"statement": "If you have ever taken a vacation out of state or out of the country, move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 35,
+			"dir": 1
+		},
+		{
+			"statement": "If both your parents did not grow up in the United States, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 36,
+			"dir": -1
+		},
+		{
+			"statement": "If your parents told you that you could be anything you wanted to be, move one place forward. Otherwise click the stand still button in the middle.",
+			"qNum": 37,
+			"dir": 1
+		},
+		{
+			"statement": "If you have not truthfully answered any of these questions so that you could move ahead, move one place back. Otherwise click the stand still button in the middle.",
+			"qNum": 38,
+			"dir": -1
+		}
+	]
+}

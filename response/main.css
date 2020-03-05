@@ -1,0 +1,782 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Concert One', cursive !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+button {
+    font-family: 'Concert One', cursive !important;
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    letter-spacing: 10px;
+}
+
+#playback-modal h1 {
+    position: absolute;
+    border-radius: 25px 25px 0px 0px;
+    margin: 0px;
+    background-color: rgb(38, 79, 35);
+    color: #fff;
+    top: 12px;
+}
+
+h2 {
+    position: relative;
+    text-align: center;
+    margin: 0px;
+    letter-spacing: 10px;
+    background-color: #264f23;
+    color: #fff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 25px 25px 0px 0px;
+    padding: 15px 0px;
+    font-size: 50px;
+    border-bottom: 10px solid #264f23;
+}
+
+h3 {
+    letter-spacing: 3px;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+p {
+    letter-spacing: 1px;
+}
+
+#input-modal {
+    background: #FFFFFF;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border: none;
+    border-radius: 25px;
+    background: rgb(181, 200, 209);
+    top: 15%;
+    max-height: 90%;
+    text-align: center;
+    position: fixed;
+    background: #78b564;
+    border-radius: 50px;
+    border: 10px solid #264f23;
+    box-sizing: border-box;
+}
+
+#input-modal h1 {
+    top: 0px;
+    position: relative;
+    background-color: #264f23;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 20px 0px;
+    margin: 0px;
+    text-align: center;
+    border-radius: 25px 25px 0px 0px;
+    font-weight: bold;
+}
+
+#playback-modal {
+    position: fixed;
+    top: .5%;
+    left: .5%;
+    height: 99%;
+    width: 99%;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border: none;
+    background-color: #264f23;
+    border-radius: 50px;
+    border: 10px solid #264f23;
+    box-sizing: border-box;
+}
+
+#input-modal--container {
+    position: relative;
+    width: 80%;
+    margin: 0px auto;
+    overflow: auto;
+    height: 115px;
+}
+
+/* name input */
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#input {
+    position: relative;
+    width: 100%;
+    height: 75px;
+    margin: 20px 0px 0px 0px;
+}
+
+#input label {
+    position: absolute;
+    color: #00000000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#name {
+    position: absolute;
+    left: 0px;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    background-color: #dadada;
+    font-size: 20px;
+    letter-spacing: 2px;
+    width: 65%;
+    height: 60px;
+}
+
+input[type="text"i] {
+    padding: 0px;
+    padding: 0 5%;
+}
+
+#name:focus {
+    outline: none;
+    background-color: #ffffff ! important;
+}
+
+#done {
+    position: absolute;
+    right: 0px;
+    border-radius: 0 30px 30px 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    font-size: 25px;
+    line-height: 0px;
+    text-align: center;
+    width: 25%;
+    height: 60px;
+}
+
+/* ################### - Strictly for part 2 - ################### */
+#inputContainer {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    text-align: center;
+}
+
+#hideButton {
+    background-color: rgba(255, 255, 255, 0.00);
+    color: #FFFFFF;
+    border: none;
+    font-size: 30px;
+}
+
+#canvas {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: -moz-calc(100% - (200px));
+    height: -webkit-calc(100% - (200px));
+    height: calc(100% - (200px));
+    width: 100%;
+    overflow: auto;
+    background-image: url("../assets/background/grass.png");
+    background-size: 300px 300px;
+    background-repeat: repeat;
+}
+
+.privilegeText {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+}
+
+.privilege-arrow {
+    position: fixed;
+    bottom: 230px;
+    display: none;
+}
+
+#privilege-arrow--left {
+    left: 25px;
+}
+
+#privilege-arrow--right {
+    right: 35px;
+}
+
+#playback-modal--background {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: none;
+    background-color: #c7e7f5;
+}
+
+.student {
+    position: absolute;
+}
+
+.student img {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 0px;
+}
+
+.name {
+    position: absolute;
+    left: 50px;
+    font-weight: bold;
+    top: 0px;
+    width: 200px;
+}
+
+#input-modal {
+    position: fixed;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    background: #78b564;
+}
+
+#errModal {
+    display: none;
+    position: fixed;
+    top: 25px;
+    width: 60%;
+    left: 20%;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    text-align: center;
+    padding: 20px 0px;
+    letter-spacing: 2px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    font-size: 20px;
+    color: #ff0000;
+}
+
+#input-modal--background {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: -10%;
+    width: 100%;
+    height: 120%;
+    background-color: #c7e7f5;
+}
+
+#nameErrorMsg {
+    position: absolute;
+    top: 65px;
+    left: 0px;
+    margin: 0px;
+}
+
+.blueButton {
+    background-color: #0C6F96;
+    color: #fff;
+    font-weight: bold;
+}
+
+.blueButton:hover {
+    background-color: rgb(1, 55, 77);
+    color: #d1d1d1;
+}
+
+.required {
+    color: #80000000;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+#bottom-panel {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0%;
+    height: 131px;
+    background-color: #264f23;
+    border-radius: 0 0 50px 50px;
+}
+
+#controls {
+    position: absolute;
+    top: 75px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: monospace;
+}
+
+#statement-container {
+    position: absolute;
+    left: 1%;
+    height: 100%;
+    width: 98%;
+    top: 0px;
+    color: #fff;
+}
+
+#statement {
+    position: relative;
+    height: 80px;
+    overflow: auto;
+    margin: 5px 0;
+    font-family: monospace;
+}
+
+#autoplay {
+    font-size: 20px;
+    background-color: #00000000;
+    color: #800000;
+    padding: 0;
+}
+
+#controls label {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+#move-container {
+    position: absolute;
+    bottom: 5px;
+    width: 90%;
+    margin: 0px auto;
+    height: 50px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+#move-container button {
+    height: 45px;
+    width: 100px;
+    font-size: 20px;
+    border-radius: 25px;
+}
+
+#back {
+    float: left;
+}
+
+#next {
+    float: right;
+}
+
+.help {
+    position: absolute;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+#helpButton1 {
+    top: 10px;
+    right: 25px;
+    height: 50px;
+    width: 50px;
+}
+
+#helpButton2 {
+    top: 10px;
+    right: 25px;
+    height: 50px;
+    width: 50px;
+    background-color: #0C6F96;
+    color: #fff;
+}
+
+#help-modal--background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000d2;
+}
+
+#help-modal {
+    position: absolute;
+    background-color: #d8e9dc;
+    color: #000;
+    border-radius: 50px;
+    padding: 0;
+    border: 10px solid #264f23;
+    box-sizing: border-box;
+}
+
+#help-modal p {
+    position: relative;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+#gotIt {
+    position: relative;
+    height: 60px;
+    width: 150px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 36px;
+    float: right;
+}
+
+#help-modal button:hover,
+#help-modal button:focus {
+    color: rgb(177, 177, 177);
+}
+
+#help-modal h2 {
+    position: relative;
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+#help-modal--icon {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    background-color: rgb(129, 136, 138);
+    border-radius: 30px;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+#help-modal--container {
+    position: relative;
+    width: 85%;
+    height: calc(100% - 190px);
+    text-align: left;
+    overflow: auto;
+    margin: 10px auto;
+}
+
+#help-modal--close-button-container {
+    position: relative;
+    height: 60px;
+    width: 85%;
+    margin: auto;
+}
+
+#speed {
+    width: 35px;
+}
+
+#progress {
+    color: #fff;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+#replay {
+    display: none;
+    height: 30px;
+    width: 64px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+#status {
+    top: 10px;
+    position: relative;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #000;
+    margin: auto;
+    width: 100%;
+    max-width: 400px;
+    min-width:300px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    display: none;
+}
+
+#done-modal--background {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: #000000d8;
+}
+
+#done-modal {
+    position: fixed;
+    border-radius: 25px;
+    text-align: center;
+    left: 20%;
+    top: 10%;
+    width: 60%;
+    background-color: #d8e9dc;
+    border: 10px solid #264f23;
+    box-sizing: border-box;
+}
+
+#done-modal p {
+    font-size: 25px;
+    margin: 35px;
+}
+
+.closeButton {
+    position: relative;
+    left: 0;
+    right: 0px;
+    margin: auto;
+    font-size: 20px;
+    bottom: 0px;
+    width: 100px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 25px;
+    height: 50px;
+    margin-bottom: 25px;
+}
+
+@media screen and (min-width: 0px) {
+    #input-modal {
+        left: 0%;
+        width: 100%;
+    }
+
+    .step {
+        height: 100px;
+        width: 100px;
+    }
+
+    #help-modal {
+        top: 5%;
+        left: 1%;
+        width: 98%;
+        height: 90%;
+    }
+
+    #input-modal--container {
+        margin: 10px auto;
+    }
+
+    #statement {
+        font-size: 15px;
+        height: 100px;
+        width: 90%;
+        left: 5%;
+    }
+
+    #status {
+        top:5px;
+        padding: 20px 0;
+    }
+
+    .privilege-arrow {
+        bottom: 250px;
+        height: 50px;
+        width: 100px;
+        opacity: 0.5;
+    }
+
+    #playback-modal {
+        top: 0%;
+        left: 0%;
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        border: none;
+    }
+
+    #playback-modal h1 {
+        width: 250px;
+        left: 0;
+        right: 0;
+        margin: 0px auto;
+        top: 0;
+    }
+
+    #canvas {
+        top: 75px;
+        height: -moz-calc(100% - (225px));
+        height: -webkit-calc(100% - (225px));
+        height: calc(100% - (225px));
+    }
+
+    #bottom-panel {
+        height: 150px;
+    }
+
+    #controls {
+        top: 75px;
+    }
+
+    #done {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    #statement {
+        font-size: 20px;
+    }
+
+    #help-modal {
+        top: 15%;
+        left: 10%;
+        width: 80%;
+        height: 70%;
+    }
+
+    #input-modal--container {
+        top: 5%;
+        margin: 2% auto;
+    }
+
+    #done {
+        font-size: 18px;
+    }
+    #status {
+        top:0;
+    }
+}
+
+@media screen and (min-width: 780px) {
+    #input-modal {
+        left: 10%;
+        width: 80%;
+    }
+
+    #help-modal {
+        top: 15%;
+        left: 10%;
+        width: 80%;
+        height: 70%;
+    }
+
+    #input-modal--container {
+        top: 5%;
+        margin: 2% auto;
+    }
+
+    #playback-modal {
+        top: .5%;
+        left: .5%;
+        height: 99%;
+        width: 99%;
+        border-radius: 50px;
+        border-radius: 50px;
+        border: 10px solid #264f23;
+        box-sizing: border-box;
+    }
+
+    #playback-modal h1 {
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin: 0px auto;
+        top: 10px;
+    }
+
+    #canvas {
+        top: 70px;
+        height: -moz-calc(100% - (200px));
+        height: -webkit-calc(100% - (200px));
+        height: calc(100% - (200px));
+    }
+
+    .privilege-arrow {
+        bottom: 185px;
+        height: 65px;
+        width: 150px;
+    }
+
+    #bottom-panel {
+        height: 131px;
+    }
+
+    #statement {
+        height: 60px;
+        font-size: 18px;
+        width: 100%;
+        left: 0%;
+    }
+
+    #controls {
+        top: 75px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #statement {
+        font-size: 22px;
+    }
+
+    #input-modal {
+        left: 20%;
+        width: 60%;
+    }
+
+    #help-modal {
+        top: 20%;
+        left: 25%;
+        width: 50%;
+        height: 60%;
+    }
+
+    #canvas {
+        top: 70px;
+        height: -moz-calc(100% - (200px));
+        height: -webkit-calc(100% - (200px));
+        height: calc(100% - (200px));
+    }
+
+    #bottom-panel {
+        height: 131px;
+    }
+
+    #statement {
+        height: 95px;
+        font-size: 20px;
+    }
+
+    .privilege-arrow {
+        bottom: 235px;
+        height: 65px;
+        width: 150px;
+    }
+
+    #done {
+        font-size: 20px;
+    }
+}
+
+.blueButton:disabled:hover {
+    background-color: #0C6F96;
+    color: #fff;
+}

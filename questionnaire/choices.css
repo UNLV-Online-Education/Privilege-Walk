@@ -1,0 +1,139 @@
+
+#faceColorButton0 {
+    background-color: #E2BDA1;
+}
+
+#faceColorButton0:focus {
+    border: 5px solid #E2BDA1;
+}
+
+#faceColorButton1 {
+    background-color: #F9E4CD;
+}
+
+#faceColorButton1:focus {
+    border: 5px solid #F9E4CD;
+}
+
+#faceColorButton2 {
+    background-color: #DEB77C;
+}
+
+#faceColorButton2:focus {
+    border: 5px solid #DEB77C;
+}
+
+#faceColorButton3 {
+    background-color: #CD9E73;
+}
+
+#faceColorButton3:focus {
+    border: 5px solid #CD9E73;
+}
+
+#faceColorButton4 {
+    background-color: #AA7A46;
+}
+
+#faceColorButton4:focus {
+    border: 5px solid #AA7A46;
+}
+
+#faceColorButton5 {
+    background-color: #7F5132;
+}
+
+#faceColorButton5:focus {
+    border: 5px solid #7F5132;
+}
+
+#faceColorButton6 {
+    background-color: #582A11;
+}
+
+#faceColorButton6:focus {
+    border: 5px solid #582A11;
+}
+
+#faceColorButton7 {
+    background-color: #D3D3D3;
+}
+
+#faceColorButton7:focus {
+    border: 5px solid #D3D3D3;
+}
+
+#faceColorButton8 {
+    background-color: #CBED88;
+}
+
+#faceColorButton8:focus {
+    border: 5px solid #CBED88;
+}
+
+/* hair Color */
+
+#hairColorButton0 {
+    background-color: #703019;
+}
+
+#hairColorButton0:focus {
+    border: 5px solid #703019;
+}
+
+#hairColorButton1 {
+    background-color: #040707;
+}
+
+#hairColorButton1:focus {
+    border: 5px solid #040707;
+}
+
+#hairColorButton2 {
+    background-color: #F2D583;
+}
+
+#hairColorButton2:focus {
+    border: 5px solid #F2D583;
+}
+
+#hairColorButton3 {
+    background-color: #582910;
+}
+
+#hairColorButton3:focus {
+    border: 5px solid #582910;
+}
+
+#hairColorButton4 {
+    background-color: #C6C6C6;
+}
+
+#hairColorButton4:focus {
+    border: 5px solid #C6C6C6;
+}
+
+#hairColorButton5 {
+    background-color: #825938;
+}
+
+#hairColorButton5:focus {
+    border: 5px solid #825938;
+}
+
+#hairColorButton6 {
+    background-color: #C57B2A;
+}
+
+#hairColorButton6:focus {
+    border: 5px solid #C57B2A;
+}
+
+.selectedFaceColor,
+.selectedFace,
+.selectedHairColor,
+.selectedHair,
+.selectedShirt,
+.selectedAccessory {
+    border: 5px solid #052c02 !important;
+}

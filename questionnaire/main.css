@@ -1,0 +1,656 @@
+/* ###################################### Same with part 2 ###################################### */
+html,
+body {
+    font-family: 'Concert One', cursive !important;
+    height: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+button {
+    font-family: 'Concert One', cursive !important;
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    letter-spacing: 10px;
+}
+
+h2 {
+    position: relative;
+    text-align: center;
+    margin: 0px;
+    letter-spacing: 10px;
+    background-color: #264f23;
+    color: #fff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 25px 25px 0px 0px;
+    padding: 15px 0px;
+    font-size: 50px;
+    border-bottom: 10px solid #264f23;
+}
+
+h3 {
+    letter-spacing: 3px;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+p {
+    letter-spacing: 1px;
+}
+
+.closeButton {
+    position: absolute;
+    left: 0;
+    right: 0px;
+    margin: auto;
+    font-size: 20px;
+    bottom: 0px;
+    width: 100px;
+    /* font-weight: bold; */
+    text-align: center;
+    border-radius: 25px;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.modal--header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-size: 54px;
+    margin: 0px;
+    text-align: center;
+    border-radius: 25px 25px 0 0;
+    background-color: #264f23;
+}
+
+#input-modal--background {
+    position: fixed;
+    left: 0;
+    margin: auto 0px;
+    top: -20%;
+    width: 100%;
+    height: 140%;
+    background-color: #c7e7f5;
+}
+
+#input-modal {
+    position: absolute;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border: none;
+    background: #78b564;
+    max-height: 72%;
+    border-radius: 50px;
+    border: 10px solid #264f23;
+    box-sizing: border-box;
+}
+
+.input-modal--mini-modal {
+    padding: 25px 0px;
+    display: none;
+    position: absolute;
+    background: #FFFFFF;
+    font-family: 'Concert One', cursive;
+    ;
+    border-radius: 25px;
+    background-color: rgb(183, 223, 193);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+    border: 10px solid #264f23;
+    box-sizing: border-box;
+}
+
+#statement-modal--background {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #CBE7F6;
+}
+
+#statement-modal {
+    position: absolute;
+    height: 700px;
+    left: 5%;
+    width: 90%;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    background: #78b564;
+    border-radius: 50px;
+    border: 10px solid #264f23;
+    box-sizing: border-box;
+}
+
+.wrapper--absolute {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 90%;
+    width: 90%;
+    overflow: auto;
+    text-align: center;
+}
+
+.input-modal--mini-modal--container {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height: 65%;
+    width: 90%;
+    margin-bottom: 15px;
+    overflow: auto;
+    text-align: center;
+}
+
+#input-modal--container,
+#statement-modal--container {
+    position: relative;
+    margin: 0px auto;
+    overflow: auto;
+}
+
+#statement {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+    color: #000;
+}
+
+#moveContainer {
+    position: relative;
+    text-align: center;
+    font-size: 36px;
+    left: 0px;
+    width: 100%;
+    clear: both;
+    padding-top:15px;
+}
+
+.stepContainer {
+    display: inline-flex;
+    position: relative;
+    text-align: center;
+    margin: 0px 5px;
+}
+
+.stepContainer p {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+}
+
+.step {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: 75% 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    padding: 0;
+}
+
+/* .step:hover {
+    background-color: rgb(68, 104, 52);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+} */
+.stepSelected {
+    background-color: rgb(1, 55, 77) !important;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.466) !important;
+}
+
+#stepBack {
+    background-image: url("../assets/left.png");
+}
+
+#standStill {
+    background-image: url("../assets/stand.png");
+}
+
+#stepForward {
+    background-image: url("../assets/right.png");
+}
+
+/* ################### - MAIN MODAL - ###################*/
+#creator {
+    position: relative;
+    border-radius: 500px;
+    float: left;
+    text-align: center;
+    background-color: #dcdddd;
+}
+
+.choiceButton {
+    color: #264f23;
+    border-radius: 30px;
+    text-transform: uppercase;
+    /* font-weight: bolder; */
+    background-color: rgb(216, 233, 220);
+    font-size: 28px;
+    text-align: center;
+}
+
+.choiceButton:hover,
+.choiceButton:focus {
+    color: #ffffff;
+    background-color: #0C6F96;
+}
+
+/* choice of attr */
+.choice {
+    border-radius: 50px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 5px solid #b7dfc1;
+    margin: 2px;
+}
+
+.choice img {
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+}
+
+.colorButton {
+    border-radius: 50px;
+    height: 40px;
+    width: 40px;
+}
+
+.colorButton:focus {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25), 0 3px 3px rgba(0, 0, 0, 0.466);
+}
+
+.shapeButton {
+    height: 60px;
+    width: 60px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #61748d;
+}
+
+.shapeButton:focus {
+    border: 5px solid #61748d;
+    background-color: #61748d;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25), 0 3px 3px rgba(0, 0, 0, 0.466);
+}
+
+/* color attr button */
+/* name input */
+label {
+    color: #000000;
+    font-size: 20px;
+    /* font-weight: bold; */
+}
+
+#input {
+    position: relative;
+    width: 100%;
+    height: 75px;
+    margin: 20px 0px 0px 0px;
+}
+
+#input label {
+    position: absolute;
+    color: #00000000;
+    font-size: 20px;
+    /* font-weight: bold; */
+}
+
+#name {
+    position: absolute;
+    left: 0px;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    background-color: #dadada;
+    font-size: 20px;
+    letter-spacing: 2px;
+    width: 65%;
+    height: 60px;
+}
+
+input[type="text"i] {
+    padding: 0px;
+    padding: 0 5%;
+}
+
+#name:focus {
+    outline: none;
+    background-color: #ffffff ! important;
+}
+
+#done {
+    position: absolute;
+    right: 0px;
+    border-radius: 0 30px 30px 0;
+    /* font-weight: bold;
+    font-weight: bolder; */
+    font-size: 25px;
+    line-height: 0px;
+    text-align: center;
+    width: 25%;
+    height: 60px;
+}
+
+#alienColors {
+    display: none;
+}
+
+#completeModal {
+    display: none;
+    position: fixed;
+    left: 20%;
+    top: 20%;
+    height: 60%;
+    width: 60%;
+    background: rgb(255, 255, 255);
+    border-radius: 25px;
+    text-align: center;
+}
+
+#completeModal p {
+    font-size: 24px;
+    margin: 24px;
+}
+
+#done-modal--background {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: #000000d8;
+}
+
+#done-modal {
+    position: fixed;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #d8e9dc;
+    border: 10px solid #264f23;
+    box-sizing: border-box;
+}
+
+#done-modal--msg {
+    margin: 50px;
+}
+
+#aLabelAgain {
+    margin: 10px;
+}
+
+#showNameAgain {
+    background-color: #fff;
+    border-radius: 50px;
+    margin: 10px;
+    padding: 5px 20px;
+    border:2px solid #264f23;
+    display: inline-block;
+    user-select: text;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+}
+
+#linkToNextActivity {
+    position: relative;
+    height: 44px;
+    width: 200px;
+    background-color: #0c6f96;
+    text-decoration: none;
+    padding: 20px;
+    margin-top: 100px;
+    color: #fff;
+    border-radius: 50px;
+}
+
+/* dice */
+#random {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    bottom: 0px;
+    right: 0px;
+    border-radius: 100px;
+    text-align: center;
+    /* font-weight: bold; */
+    font-size: 20px;
+}
+
+/* Help */
+#help-modal--background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000d2;
+}
+
+#help-modal {
+    position: absolute;
+    background-color: #d8e9dc;
+    color: #000;
+    border-radius: 50px;
+    padding: 0;
+    border: 10px solid #264f23;
+    box-sizing: border-box;
+}
+
+#help-modal p {
+    position: relative;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#gotIt {
+    position: relative;
+    height: 60px;
+    width: 150px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 36px;
+    float: right;
+    /* font-weight: bold; */
+}
+
+#help-modal button:hover,
+#help-modal button:focus {
+    color: rgb(177, 177, 177);
+}
+
+.help {
+    position: absolute;
+    border-radius: 30px;
+    height: 50px;
+    width: 50px;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#statement-modal--navigation-container {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+#statement-modal--navigation-container button {
+    margin: 15px;
+    /* font-weight: bolder; */
+    color: #ffffff;
+    font-size: 20px;
+}
+
+#progress {
+    font-size: 20px;
+}
+
+#currentUser {
+    position: relative;
+    height: 175px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    float: left;
+    float: none;
+}
+
+#currentAvatar {
+    position: relative;
+    background-color: #fff;
+    border-radius: 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 150px;
+    width: 150px;
+    margin-bottom: 5px;
+}
+
+#currentAvatar img {
+    position: absolute;
+    height: 115px;
+    width: 115px;
+    top: 14px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+#currentName {
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 15px;
+    height: 20px;
+    /* font-weight: bold; */
+    margin: 5px 0;
+    display: inline;
+    padding: 0 10px;
+}
+
+.important {
+    text-transform: uppercase;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.required {
+    position: absolute;
+    clear: both;
+    color: #ff000000;
+    /* font-weight: bold; */
+    font-size: 15px;
+    letter-spacing: 0px;
+}
+
+#help-modal--icon {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    background-color: rgb(129, 136, 138);
+    border-radius: 30px;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+#avatarErrorMsg {
+    top: 145px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+.blueButton {
+    background-color: #0C6F96;
+    color: #fff;
+    /* font-weight: bold; */
+}
+
+.blueButton:hover {
+    background-color: rgb(1, 55, 77);
+    color: #d1d1d1;
+}
+
+.greenButton:hover {
+    background-color: rgb(12, 150, 12);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+}
+
+.greenButton,
+.greenButton:disabled {
+    background-color: #2B4F21;
+}
+
+#help-modal--container {
+    position: relative;
+    width: 85%;
+    height: calc(100% - 190px);
+    text-align: left;
+    overflow: auto;
+    margin: 10px auto;
+}
+
+#help-modal--close-button-container {
+    position: relative;
+    height: 60px;
+    width: 85%;
+    margin: auto;
+}
+
+#statement-modal--container {
+    width: 96%;
+    top: 125px;
+    height: calc(100% - 150px);
+    text-align: left;
+    overflow: auto;
+}
+
+#nameErrorMsg {
+    position: absolute;
+    top: 65px;
+    left: 0px;
+    margin: 0px;
+}
+
+.blueButton:disabled:hover {
+    background-color: #0C6F96;
+    color: #fff;
+}

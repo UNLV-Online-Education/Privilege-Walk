@@ -1,0 +1,342 @@
+/* Responsive */
+@media screen and (min-width: 0px) {
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 36px;
+        width: 300px;
+    }
+
+    .help {
+        top: 20px;
+        right: 20px;
+    }
+
+    .choiceButton {
+        height: 50px;
+        margin: 1px 0%;
+        width: 100%;
+    }
+
+    #creator {
+        margin: 10px 0%;
+        height: 275px;
+        width: 100%;
+    }
+
+    .choiceFrame {
+        margin: 1px 0%;
+        width: 100%;
+    }
+
+    #statement {
+        font-size: 17px;
+    }
+
+    #done {
+        font-size: 15px;
+    }
+
+    .stepContainer {
+        width: 75px;
+        height: 90px;
+    }
+
+    .stepContainer p {
+        width: 75px;
+        top: 75px;
+        font-size: 20px;
+    }
+
+    .step {
+        height: 75px;
+        width: 75px;
+    }
+
+    #help-modal,
+    #done-modal {
+        top: 1%;
+        left: 1%;
+        width: 98%;
+        height: 98%;
+    }
+
+    #input-modal {
+        top: 15%;
+        left: 1%;
+        width: 98%;
+        margin: 0;
+        height: 70%;
+    }
+
+    #input-modal--container {
+        padding: 0px 3%;
+        top: 125px;
+        height: calc(100% - 145px);
+        width: 90%
+    }
+
+    .input-modal--mini-modal {
+        position: absolute;
+        left: 3%;
+        width: 94%;
+        top: 75%;
+        height: 245px;
+    }
+
+    #statement-modal {
+        left: 0%;
+        top: 0%;
+        width: 100%;
+        height: 100%;
+    }
+
+    #statement-modal--container {
+        top: 100px;
+        height: calc(100% - 185px);
+        width: 94%;
+    }
+
+    #statement-modal--navigation-container button {
+        border-radius: 25px;
+        width: 75px;
+        height: 50px;
+        font-size: 15px;
+    }
+
+    #done-modal p {
+        font-size: 21px;
+    }
+}
+
+/* Responsive */
+@media screen and (min-width: 600px) {
+    h1 {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        width: 420px;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .choiceButton {
+        height: 75px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        margin-left: 1%;
+        width: 49%;
+    }
+
+    #creator {
+        margin-right: 1%;
+        height: 318px;
+        width: 49%;
+    }
+
+    #statement {
+        font-size: 20px;
+    }
+
+    #done {
+        font-size: 25px;
+    }
+
+    .stepContainer {
+        width: 125px;
+        height: 150px;
+        margin: 0 10px;
+    }
+
+    .stepContainer p {
+        width: 125px;
+        top: 125px;
+        font-size: 19px;
+    }
+
+    .step {
+        height: 125px;
+        width: 125px;
+    }
+
+    #help-modal {
+        top: 15%;
+        left: 10%;
+        width: 80%;
+        max-height: 70%;
+    }
+
+    #input-modal {
+        top: calc((100% - 595px) / 2);
+        left: 0%;
+        width: 100%;
+        height: 595px;
+    }
+
+    .input-modal--mini-modal--container {
+        position: absolute;
+        height: 75%;
+    }
+
+    .input-modal--mini-modal {
+        top: 0px;
+        left: 51%;
+        width: 49%;
+        height: 350px;
+    }
+
+    #statement-modal {
+        left: 0%;
+        top: calc((100% - 575px) / 2);
+        width: 100%;
+        height: 575px;
+        max-height: 100%;
+    }
+
+    #statement-modal--container {
+        top: 115px;
+        height: calc(100% - 210px);
+        width: 90%;
+        padding: 0 3%;
+    }
+
+    #statement-modal--navigation-container button {
+        border-radius: 75px;
+        width: 125px;
+        font-size: 30px;
+        margin: 0 25px;
+    }
+
+    #done-modal {
+        top: 20%;
+        height: 60%;
+        left: 20%;
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 780px) {
+    .choiceButton {
+        height: 75px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        margin-left: 1%;
+        width: 49%;
+    }
+
+    #creator {
+        margin-right: 1%;
+        height: 318px;
+        width: 49%;
+    }
+
+    #help-modal {
+        top: 15%;
+        left: 18%;
+        width: 64%;
+        max-height: 70%;
+    }
+
+    #input-modal {
+        left: 10%;
+        width: 80%;
+    }
+
+    .input-modal--mini-modal {
+        top: 0px;
+        left: 51%;
+        width: 49%;
+        height: 350px;
+    }
+
+    #statement-modal {
+        left: 15%;
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .choiceButton {
+        height: 75px;
+    }
+
+    #creator {
+        margin-right: 1%;
+        height: 308px;
+        width: 49%;
+    }
+
+    #statement {
+        font-size: 28px;
+    }
+
+    .stepContainer {
+        width: 125px;
+        height: 150px;
+        margin: 0 25px;
+    }
+
+    .stepContainer p {
+        width: 125px;
+        top: 125px;
+    }
+
+    .step {
+        height: 125px;
+        width: 125px;
+    }
+
+    #help-modal {
+        top: 20%;
+        left: 25%;
+        width: 50%;
+        height: 60%;
+    }
+
+    #input-modal {
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 60%;
+        max-width: 1000px;
+    }
+
+    .input-modal--mini-modal {
+        left: 50%;
+        width: 50%;
+        top: 0%;
+    }
+
+    #statement-modal {
+        top: calc((100% - 700px) / 2);
+        height: 700px;
+        left: 20%;
+        width: 60%;
+    }
+
+    #statement-modal--container {
+        width: 90%;
+        padding: 0 3%;
+    }
+
+    #done-modal {
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 75%;
+        left: 30%;
+        width: 40%;
+        max-height: 600px;
+    }
+}
+
+@media screen and (max-height: 580px) {
+    #input-modal {
+        top: 14%;
+    }
+}
+
+@media screen and (max-height: 595px) {
+    #statement-modal {
+        top: 0px;
+    }
+}
